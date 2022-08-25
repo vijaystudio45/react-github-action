@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: [ "192.168.1.101" ]
+    runs-on: self-hosted
 
     strategy:
       matrix:
@@ -22,4 +22,6 @@ jobs:
     steps:
    
     - run: npm i
-    - run: npm start
+    - name: Test
+      run: npm test
+  
