@@ -22,4 +22,4 @@ jobs:
     steps:
    
     - run: npm i
-    #- run: npm start
+    - run: npm start
