@@ -29,8 +29,7 @@ jobs:
       run: |
         IP=($(curl -s http://122.160.74.251 | jq '.ip' | sed -e 's/^"//' -e 's/"$//'))
         echo "This GitHub Workflow agent public IP is: $IP"
-    - run: npm i
-    - run: npm start
+  
         
   
  
