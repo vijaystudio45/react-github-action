@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Public IP
       run: |
-        IP=($(curl -s http://122.160.74.251 | jq '.ip' | sed -e 's/^"//' -e 's/"$//'))
+        IP=($(curl -s ip | jq '.ip' | sed -e 's/^"//' -e 's/"$//'))
         echo "This GitHub Workflow agent public IP is: $IP"
   
         
