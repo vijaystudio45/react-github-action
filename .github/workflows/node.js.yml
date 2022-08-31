@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install && npm run build
     - name: Deploy
-      uses: vijaystudio45/react-github-action@4.1.1
+      uses: vijaystudio45/react-github-action
       with:
         branch: main
         folder: build
