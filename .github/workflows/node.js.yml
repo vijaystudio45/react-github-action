@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       matrix:
@@ -25,10 +25,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Public IP
-      run: |
-        IP=($(curl -s ip | jq '.ip' | sed -e 's/^"//' -e 's/"$//'))
-        echo "This GitHub Workflow agent public IP is: $IP"
+    - run: npm i
+    #- run: npm start
+    
   
         
   
