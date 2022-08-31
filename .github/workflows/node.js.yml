@@ -25,11 +25,13 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i
-    - name: Public IP
-      run: |
-        IP=($(curl -s 122.160.74.251 | jq '.ip' | sed -e 's/^"//' -e 's/"$//'))
-        echo "This GitHub Workflow agent public IP is: $IP"
+    - run: npm install && npm run build
+    - name: Deploy
+      uses: vijaystudio45/react-github-action@4.1.1
+      with:
+        branch: main
+        folder: build
+     
     
   
         
